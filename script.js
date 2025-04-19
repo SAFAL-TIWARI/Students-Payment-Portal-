@@ -5,6 +5,8 @@ document.querySelectorAll('.hostel-block').forEach(block => {
     });
 });
 
+
+
 // Load the WebAssembly modules
 let studentDataModule, studentServerModule;
 
@@ -19,38 +21,31 @@ createStudentServerModule().then((module) => {
     studentServerModule = module;
     console.log("Student Server Module Loaded");
 });
-
-// Fetch student details
-const fetchStudentDetailsFromServer = (scholarNumber) => {
-    if (!studentServerModule) {
-        console.error("Student Server Module is not loaded");
-        return "Error: Module not loaded!";
-    }
-
-    // Call the WebAssembly function
-    return studentServerModule.getStudentDetails(scholarNumber);
+// Example data: Replace this with actual data fetching logic (e.g., API or database call)
+const scholarData = {
+    "35130": 1000,
+    "34605": 2000,
+    "35193": 1500,
 };
 
-// Fetch details on button click or Enter key
-const fetchDetails = () => {
-    const scholarNumber = document.getElementById('scholarNumber').value;
+function fetchDetails() {
+    const scholarNumberInput = document.getElementById("scholar-number");
+    const amountInput = document.getElementById("amount");
 
-    if (!scholarNumber) {
-        alert('Please enter a scholar number');
-        return;
+    // Get the entered scholar number
+    const scholarNumber = scholarNumberInput.value.trim();
+
+    // Fetch the amount for the given scholar number
+    const amount = scholarData[scholarNumber];
+
+    if (amount !== undefined) {
+        // Update the amount block with the fetched value
+        amountInput.value = amount;
+    } else {
+        // Handle case where scholar number is not found
+        alert("Scholar number not found. Please check and try again.");
     }
-
-    // Call the WebAssembly function to fetch student details
-    const result = fetchStudentDetailsFromServer(scholarNumber);
-
-
-    if (result.startsWith("Error")) {
-        alert(result);
-        console.error(result);
-        return;
-    }
-
-
+}
     // Parse the result and update the UI
     const lines = result.split("\n");
     const studentData = {};
