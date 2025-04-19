@@ -23,6 +23,22 @@ body {
 .main-container {
     padding: 20px;
 }
+.sati-header {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between the logo and text */
+}
+
+.sati-logo {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+}
+
+.sati-text {
+    font-size: 20px;
+    color: #1a73e8; /* Adjust color as needed */
+    margin: 0;
+}
 
 .portal-title {
     text-align: center;
