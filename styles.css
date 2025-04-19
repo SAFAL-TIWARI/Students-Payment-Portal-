@@ -1,0 +1,186 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.main-container {
+    padding: 20px;
+}
+
+.portal-title {
+    text-align: center;
+    color: #fff;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.payment-form {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin: 0 auto;
+    max-width: 600px;
+    position: relative;
+}
+
+.hostel-selection {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.hostel-selection h2 {
+    font-size: 24px;
+    color: #1976d2;
+    margin-bottom: 20px;
+}
+
+.hostel-blocks {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.hostel-block {
+    background: #1377ce;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hostel-block:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* New Styles for Scholar Number Input and Student Details */
+.student-details {
+    margin-top: 20px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    display: none; /* Hidden until details are fetched */
+}
+
+.hidden {
+    display: none;
+}
+
+.student-details p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+#scholarNumber {
+    width: calc(100% - 100px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+#fetchDetails {
+    padding: 10px;
+    border: none;
+    background: #1976d2;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+#fetchDetails:hover {
+    background: #005bb5;
+}
+
+/* Styles for Amount Input */
+#amount {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #f0f0f0; /* Read-only input background */
+    cursor: not-allowed; /* Indicate the input is not editable */
+}
+
+/* Styles for Payment Buttons */
+.payment-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.app-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 100px;
+    text-align: center;
+}
+
+.app-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.app-icon {
+    height: 24px;
+    margin-right: 5px;
+}
+
+/* Styles for Receipt Generation */
+.receipt-container {
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: center; /* Initially hidden */
+}
+
+.receipt-container h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #1976d2;
+}
+
+.receipt-container p {
+    margin: 5px 0;
+    font-size: 14px;
+}
