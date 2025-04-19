@@ -121,12 +121,23 @@ body {
     border-radius: 6px;
     font-size: 14px;
 }
-
-#fetchDetails {
+/* Styles for Amount Input */
+#scholar-number, #amount {
+    width: 100%;
     padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    background: #f0f0f0; /* Read-only input background */
+    cursor: not-allowed; /* Indicate the input is not editable */
+}
+
+#fetch-details {
+    padding: 10px 20px;
+    background-color: #1a73e8;
+    color: white;
     border: none;
-    background: #1976d2;
-    color: #fff;
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
@@ -134,18 +145,7 @@ body {
 }
 
 #fetchDetails:hover {
-    background: #005bb5;
-}
-
-/* Styles for Amount Input */
-#amount {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
-    background: #f0f0f0; /* Read-only input background */
-    cursor: not-allowed; /* Indicate the input is not editable */
+    background-color: #1557b0;
 }
 
 /* Styles for Payment Buttons */
